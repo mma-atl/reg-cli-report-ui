@@ -9,8 +9,8 @@ export const FlakeMark: FC<FlakeData> = ({
 }) => {
   const showFlakeMark =
     modificationCount &&
-    modificationCount > 1 &&
-    modificationCount / (totalCommitCount || 1) >= 0.1;
+    modificationCount > 0 &&
+    modificationCount / (totalCommitCount || 1) > 0;
 
   if (!showFlakeMark) {
     return null;
